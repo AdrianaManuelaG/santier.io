@@ -1,0 +1,29 @@
+{
+    "ts-node": {
+      "compilerOptions": {
+        "module": "commonjs"
+      },
+      "transpileOnly": true
+    },
+    "compilerOptions": {
+      "target": "es2017", 
+      "module": "commonjs", 
+      "esModuleInterop": true, 
+      "forceConsistentCasingInFileNames": true, 
+      "strict": true, 
+      "skipLibCheck": true 
+    },
+      "configurations": [
+      {
+          "type": "node",
+          "request": "launch",
+          "name": "Launch Program",
+          "cwd": "${workspaceRoot}",
+          "program": "${workspaceRoot}/node_modules/.bin/cucumber-js",
+          "stopOnEntry": false,
+          "args": [
+              "${workspaceRoot}/config/config.js"
+          ]
+      }
+  ]
+  }
