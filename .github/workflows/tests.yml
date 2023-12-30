@@ -1,9 +1,9 @@
 name: Tests
 on:
   push:
-    branches: [main ,master ]
+    branches: [teste-Adriana] 
   pull_request:
-    branches: [main , master]
+    branches: [teste-Adriana]
 jobs:
   test:
     timeout-minutes: 60
