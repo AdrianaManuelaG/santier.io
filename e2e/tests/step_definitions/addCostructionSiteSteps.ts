@@ -5,7 +5,7 @@ import{Given,When,Then} from "@cucumber/cucumber"
 Given("I navigate to the page",async function(){
     await addNewSiteTest.openPage("https://dev.santier.io");
 });
-When("I login",async function(){
+When("I access my account",async function(){
     await addNewSiteTest.login();
 });
 Then("I click on 'santiere' label",async function(){
