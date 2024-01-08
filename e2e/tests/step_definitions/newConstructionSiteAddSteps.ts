@@ -1,4 +1,4 @@
-import { addNewSiteTest } from "../page-objects/addConstructionSite";
+import { addNewSiteTest } from "../page-objects/newConstructionSiteAdd";
 import{Given,When,Then} from "@cucumber/cucumber"
 
 

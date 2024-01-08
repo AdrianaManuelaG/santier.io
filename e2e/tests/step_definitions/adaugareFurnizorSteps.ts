@@ -4,7 +4,7 @@ import { addProviderTest } from "../page-objects/adaugareFurnizor"
 Given("I go to the page", async function(){
     await addProviderTest.openPage("https://dev.santier.io/");
 });
-When("I login",async function(){
+When("I login in the application",async function(){
     await addProviderTest.login();
 });
 Then("I click on 'furnizori' label",async function(){

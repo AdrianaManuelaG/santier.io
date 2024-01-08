@@ -21,11 +21,11 @@ class HappyFlowLogin{
         const expectUrl = 'https://dev.santier.io/app/dashboard';
         await page.waitForNavigation();
         const currentUrl = await page.url();
-        if(currentUrl === expectUrl){
-            console.log("Test pass");
-        } else {
-            console.log('Test failed');
-        }    
+        // if(currentUrl === expectUrl){
+        //     console.log("Test pass");
+        // } else {
+        //     console.log('Test failed');
+        // }    
     }
 }
 export const happyFlowLoginTest = new HappyFlowLogin();

@@ -1,4 +1,4 @@
-import { forgotPasswordTest } from "../page-objects/forgotPass";
+import { forgotPasswordTest } from "../page-objects/forgotPassword";
 import {Given,When,Then} from "@cucumber/cucumber"
 
 
