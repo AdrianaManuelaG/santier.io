@@ -12,7 +12,7 @@ class HappyFlowLogin{
     }
     async fillEmailPassField(){
         await happyFlowLogin().emailLabel.fill("adrianagula25@gmail.com");
-        await happyFlowLogin().passwordLabel.fill("adrianagula25");
+        await happyFlowLogin().passwordLabel.fill("adrianatest");
     }
     async clickLogin(){
         await happyFlowLogin().loginBtn.click();
@@ -20,12 +20,7 @@ class HappyFlowLogin{
     async verifyRedirectedToDashboard(){
         const expectUrl = 'https://dev.santier.io/app/dashboard';
         await page.waitForNavigation();
-        const currentUrl = await page.url();
-        // if(currentUrl === expectUrl){
-        //     console.log("Test pass");
-        // } else {
-        //     console.log('Test failed');
-        // }    
+        const currentUrl = await page.url();   
     }
 }
 export const happyFlowLoginTest = new HappyFlowLogin();

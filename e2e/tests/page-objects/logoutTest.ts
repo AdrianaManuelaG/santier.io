@@ -6,7 +6,7 @@ function logoutSelectors(){
         password:page.getByLabel('Parola'),
         loginBtn:page.getByRole('button', { name: 'Login' }),
         expandLabel:page.getByLabel('Expand "AdrianaGula"'),
-        chooseLogoutBtn:page.getByText('Ieșire'),
+        chooseLogoutBtn:page.getByText('logoutLogout'),
         confirmation:page.getByText('Logged out. Goodbye Adriana'),
         closeConfirmation:page.getByRole('button', { name: 'Close' })
 
@@ -19,7 +19,7 @@ class LogoutTest{
     }
     async login(){
         await logoutSelectors().email.fill("adrianagula25@gmail.com");
-        await logoutSelectors().password.fill("adrianagula25");
+        await logoutSelectors().password.fill("adrianatest");
         await logoutSelectors().loginBtn.click();     
     }
     async chooseLogoutOption(){

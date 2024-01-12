@@ -1,4 +1,4 @@
-import { LoginFailTest } from "../page-objects/autentificationWithoutCreddentials";
+import { LoginFailTest } from "../page-objects/loginWithoutCreddentials";
 import{Given,When,Then} from "@cucumber/cucumber";
 
 

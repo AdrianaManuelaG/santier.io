@@ -23,7 +23,7 @@ class AddingNewEmployeeTest{
     }
     async fillEmailField(){
         await addingNewEmployee().emailField.fill("adrianagula25@gmail.com");
-        await addingNewEmployee().passwordField.fill("adrianagula25");
+        await addingNewEmployee().passwordField.fill("adrianatest");
         await addingNewEmployee().loginBtn.click();
     }
     async employeeField(){

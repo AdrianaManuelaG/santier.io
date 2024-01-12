@@ -17,7 +17,7 @@ class AddProvider{
     }
     async login(){
         await addNewProviderSelectors().email.fill("adrianagula25@gmail.com");
-        await addNewProviderSelectors().password.fill("adrianagula25");
+        await addNewProviderSelectors().password.fill("adrianatest");
         await addNewProviderSelectors().loginBtn.click();
     }
     async providerLbl(){

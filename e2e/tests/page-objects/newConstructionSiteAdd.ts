@@ -24,7 +24,7 @@ class AddNewSite{
     }
     async login(){
         await newConstructionSite().email.fill("adrianagula25@gmail.com");
-        await newConstructionSite().password.fill("adrianagula25");
+        await newConstructionSite().password.fill("adrianatest");
         await newConstructionSite().clickLogin.click();
     }
     async clickSantiere(){

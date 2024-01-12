@@ -17,7 +17,7 @@ class AddNewMaterial{
     async openPageAndLogin(url:string){ 
         await page.goto(url);
         await addNewMaterialSelectors().email.fill("adrianagula25@gmail.com");
-        await addNewMaterialSelectors().password.fill("adrianagula25");
+        await addNewMaterialSelectors().password.fill("adrianatest");
         await addNewMaterialSelectors().loginBtn.click();
     }
     async addMaterialAndDetails(){

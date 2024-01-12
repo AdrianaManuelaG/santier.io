@@ -19,7 +19,7 @@ class OrderToiletsOnSite{
     async openPageAndLogin(url:string){
         await page.goto(url);
         await orderToiletsSelectors().email.fill("adrianagula25@gmail.com");
-        await orderToiletsSelectors().password.fill("adrianagula25");
+        await orderToiletsSelectors().password.fill("adrianatest");
         await orderToiletsSelectors().loginBtn.click();
     }
     async siteLabelAndHouse(){
