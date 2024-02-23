@@ -1,14 +1,17 @@
 function newClientRegistrationSelectors(){
     return{
-      registerBtn: page.getByRole('link', { name: 'Inregistreaza-te' }),
+      registerBtn:page.getByRole('link', { name: 'Creaza Cont Nou de Utilizator' }),
       firstNameField: page.getByLabel('Prenume'),
       secondNameField: page.getByLabel('Nume',{exact: true}),
-      userNameField: page.getByLabel('Nume de utilizator'),
-      emailAdressField: page.getByLabel('Adresa de mail'),
+      userNameField: page.getByLabel('Username'),
+      emailAdressField: page.getByLabel('Email'),
       passwordField: page.getByLabel('Parola',{exact: true}),
       passwordConfirmationField: page.getByLabel("Confirmă parola"),
-      registerButton:page.getByRole('button'),
-      popupConfBtn: page.getByRole('alertdialog')
+      registerButton:page.getByRole('button', { name: 'Creaza Cont Nou' }),
+      popupConfBtn: page.getByText('Utilizator inregistrat cu'),
+      notArobot:page.getByLabel('Are u a robot ?'),
+      termsAndCond:page.getByRole('checkbox', { name: 'Accept' }),
+      confidPolitics:page.getByRole('checkbox', { name: 'Sunt de acord cu' })
     }
 }
 
@@ -30,6 +33,9 @@ class NewClientRegistration{
         await newClientRegistrationSelectors().passwordConfirmationField.fill('adrianag25');
     }
     async clickRegisterButton(){
+        await newClientRegistrationSelectors().confidPolitics.click();
+        await newClientRegistrationSelectors().termsAndCond.click();
+        // await newClientRegistrationSelectors().notArobot.click();
         await newClientRegistrationSelectors().registerButton.click();
     }
     async popupConfirmation(){

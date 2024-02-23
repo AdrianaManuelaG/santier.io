@@ -1,10 +1,12 @@
 function addNewProviderSelectors(){
     return{
-        email:page.getByLabel('Email / Username'),
+        email:page.getByLabel('Username'),
         password:page.getByLabel('Parola'),
-        loginBtn:page.getByRole('button', { name: 'Login' }),
-        providerLabel:page.getByText('shopping_cartFurnizori'),
-        addNewProvider:page.getByLabel('Expand', { exact: true }),
+        areUrobotBtn:page.getByLabel('Are u a robot ?'),
+        loginBtn:page.getByRole('button', { name: 'Intra in cont' }),
+        menuButton:page.getByLabel('Menu'),
+        provider:page.getByText('Furnizori'),
+        addNewProvider:page.getByRole('listitem').getByLabel('Expand'),
         fillTheFields:page.getByLabel('Furnizor'),
         clickAddBtn:page.getByRole('button', { name: 'Adauga' }),
         confirmMsg:page.getByText('Furnizor adaugat cu succes')
@@ -18,10 +20,12 @@ class AddProvider{
     async login(){
         await addNewProviderSelectors().email.fill("adrianagula25@gmail.com");
         await addNewProviderSelectors().password.fill("adrianatest");
+        // await addNewProviderSelectors().areUrobotBtn.click();
         await addNewProviderSelectors().loginBtn.click();
     }
     async providerLbl(){
-        await addNewProviderSelectors().providerLabel.click();
+        await addNewProviderSelectors().menuButton.click();
+        await addNewProviderSelectors().provider.click();
     }
     async addNewProvider(){
         await addNewProviderSelectors().addNewProvider.click();

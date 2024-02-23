@@ -1,7 +1,7 @@
 function loginWithEmailOnlySelectors(){
     return{
-        email:page.getByLabel('Email / Username'),
-        loginBtn:page.getByRole('button', { name: 'Login' }),
+        email:page.getByLabel('Username'),
+        loginBtn:page.getByRole('button', { name: 'Intra in cont' }),
         error:page.getByText('Minim 5 caractere'),
         error1:page.getByText('error')
     }

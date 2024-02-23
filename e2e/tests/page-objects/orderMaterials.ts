@@ -1,16 +1,17 @@
 function orderMaterialsSelectors(){
     return{
-        email:page.getByLabel('Email / Username'),
+        email:page.getByLabel('Username'),
         password:page.getByLabel('Parola'),
-        login:page.getByRole('button', { name: 'Login' }),
-        siteLabel:page.getByText('apartmentȘantiereGestionează'),
-        chooseHouse:page.getByText('#23ActivCasa2Suceava'),
-        askButton:page.getByRole('button', { name: 'Cerere' }),
+        login:page.getByRole('button', { name: 'Intra in cont' }),
+        openMenu:page.getByLabel('Menu'),
+        siteLabel:page.getByText('Șantiere', { exact: true }),
+        chooseHouse:page.getByText('Activ #23settings'),
+        askButton:page.getByRole('button', { name: 'Cerere noua' }),
         askMaterialBtn:page.getByRole('button', { name: 'Cerere materiale' }),
         materialName:page.getByLabel('Nume material'),
         quantity:page.getByLabel('Cantitate'),
         unit:page.getByLabel('Unitate de măsură'),
-        deliveryTime:page.getByRole('button', { name: 'F. urgent (1 zi)' }),
+        deliveryTime:page.getByRole('button', { name: 'Foarte urgent' }),
         clickCommand:page.getByRole('button', { name: 'Comandă' }),
         confirmation: page.getByText('Comanda a fost adaugata cu')
 
@@ -27,6 +28,7 @@ class OrderMaterials{
         await orderMaterialsSelectors().login.click();
     }
     async clickSantiere(){
+        await orderMaterialsSelectors().openMenu.click();
         await orderMaterialsSelectors().siteLabel.click();
     }
     async chooseHouse(){

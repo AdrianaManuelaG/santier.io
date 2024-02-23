@@ -2,13 +2,12 @@ import { collapseTextChangeRangesAcrossMultipleVersions } from "typescript";
 
 function logoutSelectors(){
     return{
-        email:page.getByLabel('Email / Username'),
+        email:page.getByLabel('Username'),
         password:page.getByLabel('Parola'),
-        loginBtn:page.getByRole('button', { name: 'Login' }),
-        expandLabel:page.getByLabel('Expand "AdrianaGula"'),
-        chooseLogoutBtn:page.getByText('logoutLogout'),
-        confirmation:page.getByText('Logged out. Goodbye Adriana'),
-        closeConfirmation:page.getByRole('button', { name: 'Close' })
+        loginBtn:page.getByRole('button', { name: 'Intra in cont' }),
+        expandLabel:page.getByLabel('Expand'),
+        chooseLogoutBtn:page.getByText('logoutLogout'), 
+        popupConfirmation:page.getByText('Logged out. Goodbye Adriana')
 
     }
 }
@@ -25,8 +24,7 @@ class LogoutTest{
     async chooseLogoutOption(){
         await logoutSelectors().expandLabel.click();
         await logoutSelectors().chooseLogoutBtn.click();
-        await logoutSelectors().confirmation.isVisible();
-        await logoutSelectors().closeConfirmation.click();
+        await logoutSelectors().popupConfirmation.isVisible(); 
     }
 }
 

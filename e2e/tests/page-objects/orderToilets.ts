@@ -1,15 +1,16 @@
 function orderToiletsSelectors(){
     return{
-        email:page.getByLabel('Email / Username'),
+        email:page.getByLabel('Username'),
         password:page.getByLabel('Parola'),
-        loginBtn: page.getByRole('button', { name: 'Login' }),
-        siteLabel:page.getByText('apartmentȘantiereGestionează'),
-        casaGulaLabel:page.getByText('#18ActivCasa GULABOSANCI'),
-        askBtn:page.getByRole('button', { name: 'Cerere' }),
-        containerBtn:page.getByRole('menu').getByRole('button', { name: 'Containere/Toalete' }),
-        dropdownDetails:page.locator('div').filter({ hasText: /^Solicitare$/ }).first(),
+        loginBtn: page.getByRole('button', { name: 'Intra in cont' }),
+        openMenu:page.getByLabel('Menu'),
+        siteLabel:page.getByText('Șantiere', { exact: true }),
+        casaLabel: page.getByText('Activ #23settings'),
+        askBtn:page.getByRole('button', { name: 'Cerere noua' }),
+        containerBtn:page.getByRole('button', { name: 'Containere/Toalete' }),
+        dropdownDetails:page.locator('div').filter({ hasText: /^arrow_drop_down$/ }),
         chooseDeliverOnSite:page.getByText('Livrare toalete pe santier'),
-        deliverInOneDayBtn:page.getByRole('button', { name: 'F. urgent (1 zi)' }),
+        deliverInOneDayBtn: page.getByRole('button', { name: 'Foarte urgent' }),
         sendSolicitationBtn: page.getByRole('button', { name: 'Trimite Solicitare' }),
         confirmation:page.getByText('Solicitarea a fost adaugata')
     }
@@ -23,10 +24,9 @@ class OrderToiletsOnSite{
         await orderToiletsSelectors().loginBtn.click();
     }
     async siteLabelAndHouse(){
-        console.log("here yes");
+        await orderToiletsSelectors().openMenu.click();
         await orderToiletsSelectors().siteLabel.click();
-        console.log("works till here");
-        await orderToiletsSelectors().casaGulaLabel.click();
+        await orderToiletsSelectors().casaLabel.click();
     }
     async askForToilets(){
         await orderToiletsSelectors().askBtn.click();

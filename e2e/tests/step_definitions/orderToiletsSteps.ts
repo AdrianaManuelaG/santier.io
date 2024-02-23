@@ -5,7 +5,7 @@ import { OrderToiletsOnSiteTest } from "../page-objects/orderToilets";
 Given("I go to the page and sign in", async function(){
     await OrderToiletsOnSiteTest.openPageAndLogin("https://dev.santier.io/");
 });
-When("I go to 'santiere'label and choose 'Casa GULA'", async function(){
+When("I go to 'santiere'label and choose 'Casa2'", async function(){
     await OrderToiletsOnSiteTest.siteLabelAndHouse();
 });
 Then("I click on red button 'Cerere' and 'toalete'", async function(){

@@ -1,7 +1,7 @@
 function forgotPasswordSelectors(){
     return{
         forgotPassBtn: page.getByRole('link', { name: 'Ai uitat parola?' }),
-        usernameOrEmailField: page.getByLabel('Email / Username'),
+        usernameOrEmailField: page.getByLabel('Username'),
         resetPassBtn: page.getByRole('button', { name: 'Reseteaza Parola' }),
         infoSteps: page.getByText('Daca datele introduse sunt')
     }

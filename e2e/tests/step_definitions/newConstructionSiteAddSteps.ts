@@ -11,7 +11,7 @@ When("I access my account",async function(){
 Then("I click on 'santiere' label",async function(){
     await addNewSiteTest.clickSantiere();
 });
-When("I fill all the empty fields",async function(){
+When("I click on 'adaugare santier' and fill all the empty fields",async function(){
     await addNewSiteTest.siteDetails();
 });
 Then("I click on submit buton and i recive an confirmation", async function(){

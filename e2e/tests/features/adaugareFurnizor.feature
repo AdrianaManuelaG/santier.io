@@ -1,4 +1,4 @@
-Feature: Add new provider
+Feature: Add new provider 
 
 Scenario: Adding a new provider
     Given I go to the page

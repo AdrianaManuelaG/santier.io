@@ -10,9 +10,6 @@ When("I login in my acount", async function(){
 Then("I go to 'companie' label", async function(){
     await updateCompanyDates.clickCompanyLabel();
 });
-When("I click to expand the options", async function(){
-    await updateCompanyDates.expandLabel();
-});
 Then("I change tha name of company", async function(){
     await updateCompanyDates.deleteAndchangeName();
 });

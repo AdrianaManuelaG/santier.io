@@ -1,8 +1,8 @@
 function changeCommandsStatusSelectors(){
     return{
-        email:page.getByLabel('Email / Username'),
+        email:page.getByLabel('Username'),
         password:page.getByLabel('Parola'),
-        loginBtn:page.getByRole('button', { name: 'Login' }),
+        loginBtn:page.getByRole('button', { name: 'Intra in cont' }),
         changeStatusOngoing:page.getByRole('button', { name: 'Schimba statusul in desfasurare' }),//first().click()
         clickOK:page.getByRole('button', { name: 'OK' }),
         changeStatusCompleted:page.getByRole('button', { name: 'Schimba statusul in finalizat' }), //first()

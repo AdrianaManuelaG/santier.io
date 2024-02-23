@@ -1,10 +1,11 @@
 function updateCompanyDatesSelectors(){
     return{
-        email:page.getByLabel('Email / Username'),
+        email:page.getByLabel('Username'),
         password:page.getByLabel('Parola'),
-        login:page.getByRole('button', { name: 'Login' }),
-        companyLabel: page.getByText('workCompanieDatele companiei'),
-        expandOptions:page.getByLabel('Expand', { exact: true }),
+        notArobot:page.getByLabel('Are u a robot ?'),
+        login:page.getByRole('button', { name: 'Intra in cont' }),
+        menuButton:page.getByLabel('Menu'),
+        companyLabel: page.getByText('CompanieDatele companiei'),
         deleteActualName:page.getByLabel('Numele companiei'),
         addNewName:page.getByLabel('Numele companiei'),
         clickModifyBtn:page.getByRole('button', { name: 'Modifică' }),
@@ -19,13 +20,12 @@ class UpdateCompanyDates{
     async login(){
         await updateCompanyDatesSelectors().email.fill("adrianagula25@gmail.com");
         await updateCompanyDatesSelectors().password.fill("adrianatest");
+        // await updateCompanyDatesSelectors().notArobot.click();
         await updateCompanyDatesSelectors().login.click();
     }
     async clickCompanyLabel(){
+        await updateCompanyDatesSelectors().menuButton.click();
         await updateCompanyDatesSelectors().companyLabel.click();
-    }
-    async expandLabel(){
-        await updateCompanyDatesSelectors().expandOptions.click();
     }
     async deleteAndchangeName(){
         await updateCompanyDatesSelectors().deleteActualName.fill("");

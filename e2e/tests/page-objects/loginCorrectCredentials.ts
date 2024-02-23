@@ -1,8 +1,10 @@
 function happyFlowLogin(){
     return{
-        emailLabel: page.getByLabel('Email / Username'),
+        emailLabel: page.getByLabel('Username'),
         passwordLabel: page.getByLabel('Parola'),
-        loginBtn:  page.getByRole('button', { name: 'Login' })
+        areYouRobotBtn:page.getByLabel('Are u a robot ?'),
+        loginBtn:  page.getByRole('button', { name: 'Intra in cont' }),
+
     }
 }
 
@@ -13,7 +15,8 @@ class HappyFlowLogin{
     async fillEmailPassField(){
         await happyFlowLogin().emailLabel.fill("adrianagula25@gmail.com");
         await happyFlowLogin().passwordLabel.fill("adrianatest");
-    }
+    //     await happyFlowLogin().areYouRobotBtn.click();
+     }
     async clickLogin(){
         await happyFlowLogin().loginBtn.click();
     }

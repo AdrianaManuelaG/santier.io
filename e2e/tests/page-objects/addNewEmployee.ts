@@ -1,16 +1,18 @@
 function addingNewEmployee(){
     return{
-        emailField: page.getByLabel('Email / Username'),
+        emailField: page.getByLabel('Username'),
         passwordField: page.getByLabel('Parola'),
-        loginBtn: page.getByRole('button', { name: 'Login' }),
-        employeeLabel:page.getByText('peopleAngajațiGestionează'),
-        expandFieldsNewEmployee: page.getByLabel('Expand', { exact: true }),
+        notArobotBtn:page.getByLabel('Are u a robot ?'),
+        loginBtn:page.getByRole('button', { name: 'Intra in cont' }),
+        menuButton:page.getByLabel('Menu'),
+        employeeLabel:page.getByText('Angajați', { exact: true }),
+        expandFieldsNewEmployee: page.getByRole('main').locator('div').filter({ hasText: 'peopleCompanie > Angajatikeyboard_arrow_downAdauga un nou angajat' }).getByLabel('Expand'),
         employeeFirstName:page.getByLabel('Prenume'),
         employeeSecondName:page.getByLabel('Nume', { exact: true }),
-        employeeUserName:page.getByLabel('Nume de utilizator'),
+        employeeUserName:page.getByLabel('Username'),
         employeePassword: page.getByLabel('Parola', { exact: true }),
         confirmPassword:page.getByLabel('Confirmă parola'),
-        employeeEmail:page.getByLabel('Adresa de mail (optional)'),
+        employeeEmail:page.getByLabel('Email (optional)'),
         employeePhoneNumber:page.getByLabel('Telefon (optional)'),
         addEmployeeBtn:page.getByRole('button', { name: 'Adaugă angajat' }),
         successfulAddingMsg:page.getByText('Angajat adaugat cu succes')
@@ -24,9 +26,11 @@ class AddingNewEmployeeTest{
     async fillEmailField(){
         await addingNewEmployee().emailField.fill("adrianagula25@gmail.com");
         await addingNewEmployee().passwordField.fill("adrianatest");
+        // await addingNewEmployee().notArobotBtn.click();
         await addingNewEmployee().loginBtn.click();
     }
     async employeeField(){
+        await addingNewEmployee().menuButton.click();
         await addingNewEmployee().employeeLabel.click();
         await addingNewEmployee().expandFieldsNewEmployee.click();   
     }

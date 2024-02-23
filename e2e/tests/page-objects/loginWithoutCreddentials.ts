@@ -1,6 +1,6 @@
 function failLogin(){
     return{
-        loginBtn:page.getByRole('button', { name: 'Login' }),
+        loginBtn:page.getByRole('button', { name: 'Intra in cont' }),
         alertMsg: page.getByRole("alert",{name:"Minim 5 caractere"})
     }
 }
