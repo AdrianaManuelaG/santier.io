@@ -5,7 +5,7 @@ function siteSettingsSelectors(){
         loginBtn:page.getByRole('button', { name: 'Intra in cont' }),
         openMenu:page.getByLabel('Menu'),
         siteLabel:page.getByText('Șantiere', { exact: true }),
-        chooseHouse:page.getByText('Activ #31settings'),
+        chooseHouse:page.getByText('Activ #26'),
         settingsButton: page.getByRole('listitem').getByLabel('Expand'),
         closeSite:page.getByRole('button', { name: 'Închide șantier' }),
         okBtn:page.getByRole('button', { name: 'Inchide' }),

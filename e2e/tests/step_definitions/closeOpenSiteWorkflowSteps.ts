@@ -10,13 +10,13 @@ When("I sign in", async function(){
 Then("I go to site label and choose the house", async function(){
     await CloseOpenSiteTest.siteLabelandChooseHouse();
 });
-Then("I click on settings near the name of the house",async function(){
+Then("I click on settings in the right of the page",async function(){
     await CloseOpenSiteTest.settingsBtn();
 });
-When("I click on 'inchide santier' button and 'ok'",async function(){
+When("I click on 'inchide santier' button and 'inchide'",async function(){
     await CloseOpenSiteTest.closeSiteBtn();
 });
-Then("I click 're-deschide santier' button and 'ok'",async function(){
+Then("I click 're-deschide santier' button and 're-deschide'",async function(){
     await CloseOpenSiteTest.reopenSiteBtn();
 });
     
