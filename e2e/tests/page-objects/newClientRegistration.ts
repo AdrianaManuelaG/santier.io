@@ -5,6 +5,7 @@ function newClientRegistrationSelectors(){
       secondNameField: page.getByLabel('Nume',{exact: true}),
       userNameField: page.getByLabel('Username'),
       emailAdressField: page.getByLabel('Email'),
+      phoneField: page.getByLabel('Telefon'),
       passwordField: page.getByLabel('Parola',{exact: true}),
       passwordConfirmationField: page.getByLabel("Confirmă parola"),
       registerButton:page.getByRole('button', { name: 'Creaza Cont Nou' }),
@@ -28,7 +29,9 @@ class NewClientRegistration{
         await newClientRegistrationSelectors().secondNameField.fill('Gula');
         const radomName = Math.random().toString(36).slice(2)
         await newClientRegistrationSelectors().userNameField.fill('adrianaMAG-' + radomName);
-        await newClientRegistrationSelectors().emailAdressField.fill('adrianaaGAM' + radomName + '@gmail.com');   
+        await newClientRegistrationSelectors().emailAdressField.fill('adrianaaGAM' + radomName + '@gmail.com');
+        const randomTel = Math.floor(Math.random() * 9000000000) + 1;
+        await newClientRegistrationSelectors().phoneField.fill("+" + randomTel);
         await newClientRegistrationSelectors().passwordField.fill('adrianag25');
         await newClientRegistrationSelectors().passwordConfirmationField.fill('adrianag25');
     }
